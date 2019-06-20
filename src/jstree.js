@@ -656,7 +656,7 @@
 			_node.appendChild(_temp1);
 			_temp1 = document.createElement('A');
 			_temp1.className = 'jstree-anchor';
-			_temp1.setAttribute('href','#');
+			// _temp1.setAttribute('href','#');
 			_temp1.setAttribute('tabindex','-1');
 			_temp1.setAttribute('role', 'treeitem');
 			_temp2 = document.createElement('I');
