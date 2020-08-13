@@ -1955,15 +1955,16 @@
 						this.trigger('changed', { 'action' : 'model', 'selected' : this._data.core.selected });
 					}
 
-					// If no worker, try to mimic worker behavioour, by invoking cb asynchronously
-					if (!worker && setImmediate) {
-						setImmediate(function(){
-							cb.call(inst, true);
-						});
-					}
-					else {
-						cb.call(inst, true);
-					}
+					cb.call(inst, true);
+					// // If no worker, try to mimic worker behavioour, by invoking cb asynchronously
+					// if (!worker && setImmediate) {
+					// 	setImmediate(function(){
+					// 		cb.call(inst, true);
+					// 	});
+					// }
+					// else {
+					// 	cb.call(inst, true);
+					// }
 				};
 			if(this.settings.core.worker && window.Blob && window.URL && window.Worker) {
 				try {
