@@ -3835,6 +3835,21 @@
 			return options && options.flat ? flat : (obj.id === $.jstree.root ? tmp.children : tmp);
 		},
 		/**
+		 * iterate all nodes of a tree
+		 * @name each_node(callback)
+		 * @param  {Function} callback a function to be called once the node is created
+		 */
+		each_node: function(callback) {
+			if (callback) {
+				var id, nodes = this._model.data;
+				for (id in nodes) {
+					if (nodes.hasOwnProperty(id) /*&& id !== $.jstree.root*/) {
+						callback.call(this, nodes[id]);
+					}
+				}
+			}
+		},
+		/**
 		 * create a new node (do not confuse with load_node)
 		 * @name create_node([par, node, pos, callback, is_loaded])
 		 * @param  {mixed}   par       the parent node (to create a root node use either "#" (string) or `null`)
